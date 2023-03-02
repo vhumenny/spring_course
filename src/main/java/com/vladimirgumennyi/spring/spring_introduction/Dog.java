@@ -2,7 +2,10 @@ package com.vladimirgumennyi.spring.spring_introduction;
 
 import org.springframework.stereotype.Component;
 
-@Component
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
+//@Component
 public class Dog implements Pet {
 //    private String name;
 
@@ -15,9 +18,12 @@ public class Dog implements Pet {
         System.out.println("bow-wow");
     }
 
+    @PostConstruct
     public void init() {
         System.out.println("Class Dog: init method");
     }
+
+    @PreDestroy
     public void destroy() {
         System.out.println("Class Dog: destroy method");
     }
