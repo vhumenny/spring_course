@@ -15,11 +15,34 @@ public class Test1 {
                 .addAnnotatedClass(Department.class)
                 .buildSessionFactory(); Session session = factory.getCurrentSession()) {
 
+//            Employee employee1 = new Employee("Oleg", "Ivanov", 800);
+//            Employee employee2 = new Employee("Andrey", "Petrov", 1000);
+//            Employee employee3 = new Employee("Vladimir", "Gumennyi", 900);
+//
+//            Department department = new Department("Sales", 800, 1500);
+//
+//            department.addEmployeeToDepartment(employee1);
+//            department.addEmployeeToDepartment(employee2);
+//            department.addEmployeeToDepartment(employee3);
+//
 //            session.beginTransaction();
 //
-//            Department department = session.get(Department.class, 1);
-//            System.out.println(department);
-//            System.out.println(department.getEmps());
+//            session.save(department);
+//
+//            session.getTransaction().commit();
+//            System.out.println("done");
+
+            session.beginTransaction();
+
+            Department department = session.get(Department.class, 3);
+
+            System.out.println(department);
+
+            department.getEmps().get(0);
+
+            session.getTransaction().commit();
+
+            System.out.println(department.getEmps());
 
 //            session.beginTransaction();
 //
@@ -30,13 +53,13 @@ public class Test1 {
 //            session.getTransaction().commit();
 //
 //            System.out.println("Done!");
-            session.beginTransaction();
-            Employee employee = session.get(Employee.class, 1);
-            session.delete(employee);
-
-            session.getTransaction().commit();
-
-            System.out.println("Done!");
+//            session.beginTransaction();
+//            Employee employee = session.get(Employee.class, 1);
+//            session.delete(employee);
+//
+//            session.getTransaction().commit();
+//
+//            System.out.println("Done!");
 
 
         }
